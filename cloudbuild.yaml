@@ -1,11 +1,12 @@
+steps:
 - name: 'gcr.io/cloud-builders/gcloud'
- args:
- — functions
- — deploy
- — — runtime=nodejs16
- — — trigger-http
- — — source=./ # Function source files
- — — entry-point=helloWorld # Function entry point
- —  ci-cd-cf # Function name
- waitFor: ['_']
- id: 'deploying-a-serverless-function'
+  args:
+    - functions
+    - deploy
+    - runtime=nodejs16
+    - trigger-http
+    - source=./ # Function source files
+    - entry-point=helloWorld # Function entry point
+    - ci-cd-cf # Function name
+  waitFor: ['_']
+  id: 'deploying-a-serverless-function'
