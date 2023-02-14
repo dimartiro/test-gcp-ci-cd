@@ -8,5 +8,4 @@ steps:
     - source=./ # Function source files
     - entry-point=helloWorld # Function entry point
     - ci-cd-cf # Function name
-  waitFor: ['_']
   id: 'deploying-a-serverless-function'
