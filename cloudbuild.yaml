@@ -1,11 +1,12 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   args:
+    - gcloud
     - functions
     - deploy
-    - runtime=nodejs16
-    - trigger-http
-    - source=./ # Function source files
-    - entry-point=helloWorld # Function entry point
     - ci-cd-cf # Function name
+    - --region=us-central1
+    - --source=.
+    - --trigger-http
+    - --runtime=nodejs16
   id: 'deploying-a-serverless-function'
